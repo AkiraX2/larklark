@@ -1,0 +1,196 @@
+﻿<UserControl x:Class="学比邻老师客户端.Views.TimeTableView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:学比邻老师客户端.Views"
+             xmlns:uih="clr-namespace:学比邻老师客户端.UI.Helpers"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <!--uih:GridLinesRenderer.StrokeColor="#CCCCCC" uih:GridLinesRenderer.StrokeWidth="1"-->
+        <uih:GridLinesRenderer x:Key="GridHelper" StrokeColor="#CCCCCC" StrokeWidth="1.0" />
+        <ItemsPanelTemplate x:Key="TimeTableDayPartPanelTemplate">
+            <Grid IsItemsHost="True" ShowGridLines="True" ToolTip="{StaticResource GridHelper}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="3*" />
+                    <RowDefinition Height="2*" />
+                </Grid.RowDefinitions>
+            </Grid>
+        </ItemsPanelTemplate>
+        <ItemsPanelTemplate x:Key="TimeTableDatePanelTemplate">
+            <Grid IsItemsHost="True" ShowGridLines="True">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+            </Grid>
+        </ItemsPanelTemplate>
+        <ItemsPanelTemplate x:Key="TimeTableTimePanelTemplate">
+            <Grid IsItemsHost="True" ShowGridLines="True">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+            </Grid>
+        </ItemsPanelTemplate>
+        <ItemsPanelTemplate x:Key="TimeTableClassPanelTemplate">
+            <Grid IsItemsHost="True" ShowGridLines="True">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+            </Grid>
+        </ItemsPanelTemplate>
+
+        <Style x:Key="ItemContainerStyle">
+            <Setter Property="Grid.Row" Value="{Binding RowIndex}" />
+            <Setter Property="Grid.RowSpan" Value="{Binding RowSpan}" />
+            <Setter Property="Grid.Column" Value="{Binding Column}" />
+            <Setter Property="Grid.ColumnSpan" Value="{Binding ColumnSpan}" />
+
+        </Style>
+    </UserControl.Resources>
+    <Border CornerRadius="8" Background="#FDFEFF">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="16" Color="#E8E8E8" Direction="-90" ShadowDepth="6" Opacity="0.28" />
+        </Border.Effect>
+        <Grid ShowGridLines="True">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="44" />
+                <RowDefinition Height="42" />
+                <RowDefinition Height="*" />
+
+                <RowDefinition Height="30" />
+            </Grid.RowDefinitions>
+
+            <Border Background="#459BEC" CornerRadius="8 8 0 0">
+                <Grid>
+                    <TextBlock Text="课程表 — 上周（05.27 — 06.02）" Foreground="#FFF" FontWeight="Bold" FontSize="14"
+                               HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    <Button Style="{StaticResource IconBtnSytle}" HorizontalAlignment="Left" VerticalAlignment="Center"
+                            Margin="50,0,0,0" Width="20" Height="20">
+                        <Button.Background>
+                            <ImageBrush
+                                ImageSource="/学比邻老师客户端;component/Resources/Images/ClassTable/btn_left arrow.png"
+                                Stretch="None" />
+                        </Button.Background>
+                    </Button>
+                    <Button Style="{StaticResource IconBtnSytle}" HorizontalAlignment="Right"
+                            VerticalAlignment="Center" Width="20" Height="20" Margin="0,0,50,0">
+                        <Button.Background>
+                            <ImageBrush
+                                ImageSource="/学比邻老师客户端;component/Resources/Images/ClassTable/btn_right arrow.png"
+                                Stretch="None" />
+                        </Button.Background>
+                    </Button>
+                </Grid>
+            </Border>
+
+            <ItemsControl Grid.Row="1" ItemsSource="{Binding DateCells}"
+                          ItemsPanel="{StaticResource TimeTableDatePanelTemplate}"
+                          ItemContainerStyle="{StaticResource ItemContainerStyle}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderBrush="Red" BorderThickness="0 0 0 0" SnapsToDevicePixels="True">
+                            <TextBlock Text="{Binding Name}" Foreground="#333333" FontWeight="Bold"
+                                       HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+
+            <Grid Grid.Row="2" ShowGridLines="True">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="7*" />
+                </Grid.ColumnDefinitions>
+
+                <ItemsControl Grid.Column="0" ItemsSource="{Binding DayCells}"
+                              ItemsPanel="{StaticResource TimeTableDayPartPanelTemplate}"
+                              ItemContainerStyle="{StaticResource ItemContainerStyle}">
+
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderBrush="Red" BorderThickness="0 0 0 0" SnapsToDevicePixels="True">
+                                <TextBlock Text="{Binding Name}" Foreground="#333333" FontWeight="Bold"
+                                           HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+                <ItemsControl Grid.Column="1" ItemsSource="{Binding DayCells}"
+                              ItemsPanel="{StaticResource TimeTableTimePanelTemplate}"
+                              ItemContainerStyle="{StaticResource ItemContainerStyle}">
+
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderBrush="Red" BorderThickness="0 0 0 0" SnapsToDevicePixels="True">
+                                <TextBlock Text="{Binding Name}" Foreground="#333333" FontWeight="Bold"
+                                           HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+                <ItemsControl Grid.Column="2" ItemsSource="{Binding DayCells}"
+                              ItemsPanel="{StaticResource TimeTableClassPanelTemplate}"
+                              ItemContainerStyle="{StaticResource ItemContainerStyle}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderBrush="Red" BorderThickness="0 0 0 0" SnapsToDevicePixels="True">
+                                <TextBlock Text="{Binding Name}" Foreground="#333333" FontWeight="Bold"
+                                           HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Grid>
+            <Border Grid.Column="0" Grid.Row="3" CornerRadius="0 8 8 0">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center"
+                            Height="18">
+                    <TextBlock Text="试听课：1" Foreground="#333333" FontSize="11" VerticalAlignment="Center" />
+                    <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Margin="10 0" />
+                    <TextBlock Text="试听课：1" Foreground="#333333" FontSize="11" VerticalAlignment="Center" />
+                    <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Margin="10 0" />
+                    <TextBlock Text="试听课：1" Foreground="#333333" FontSize="11" VerticalAlignment="Center" />
+                    <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Margin="10 0" />
+                    <TextBlock Text="老师请假：1" Foreground="#333333" FontSize="11" VerticalAlignment="Center" />
+
+                </StackPanel>
+            </Border>
+        </Grid>
+
+    </Border>
+</UserControl>

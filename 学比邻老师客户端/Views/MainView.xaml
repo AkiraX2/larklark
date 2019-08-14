@@ -1,0 +1,103 @@
+﻿<Window x:Class="学比邻老师客户端.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:学比邻老师客户端.Views"
+        mc:Ignorable="d"
+        xmlns:s="https://github.com/canton7/Stylet"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:uib="clr-namespace:UI.Behaivors"
+        xmlns:uic="clr-namespace:学比邻老师客户端.UI.Controls"
+        xmlns:uicvt="clr-namespace:学比邻老师客户端.UI.Converters"
+        xmlns:uid="clr-namespace:学比邻老师客户端.UI.Decorators"
+        Title="{Binding DisplayName}" Topmost="True" WindowStartupLocation="CenterScreen" Width="1320" Height="760"
+        MinHeight="760" MinWidth="1320"
+        Background="Transparent"
+        ResizeMode="CanResizeWithGrip" WindowStyle="None" AllowsTransparency="True" BorderThickness="20">
+    <Window.Effect>
+        <DropShadowEffect BlurRadius="18" Color="#666666" Direction="0" ShadowDepth="0" Opacity=".22" />
+    </Window.Effect>
+    <i:Interaction.Behaviors>
+        <uib:DragWindowBehavior />
+        <uib:TopmostWindowBehavior />
+        <uib:CloseWindowBehavior />
+    </i:Interaction.Behaviors>
+    <Window.RenderTransform>
+        <TransformGroup>
+            <ScaleTransform x:Name="MScaleTransform" />
+            <SkewTransform />
+            <RotateTransform />
+            <TranslateTransform />
+        </TransformGroup>
+    </Window.RenderTransform>
+
+    <Border Background="#FFFFFF" CornerRadius="10">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="130" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" CornerRadius="10 0 0 10" Background="#3993E9" Panel.ZIndex="10">
+                <Grid>
+                    <uic:AvatarUserControl Width="66" Height="66" AvatarBorderThickness="4"
+                                           HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,107,0,0">
+                        <uic:AvatarUserControl.Effect>
+                            <DropShadowEffect BlurRadius="4" Color="#7CC0FF" Direction="-90" ShadowDepth="2"
+                                              Opacity="0.28" />
+                        </uic:AvatarUserControl.Effect>
+
+                    </uic:AvatarUserControl>
+                    <TextBlock Text="下午好，张丽华" Foreground="#FFFFFF" FontWeight="Heavy" HorizontalAlignment="Center"
+                               VerticalAlignment="Top" Margin="0,185,0,0" />
+
+                    <RadioButton Style="{StaticResource TabButtonStyle}" HorizontalAlignment="Left" Content="讲台" Checked="{s:Action OnClassTableBtn_Checked}"
+                                 VerticalAlignment="Top" Margin="14,292,0, 0" IsChecked="True" />
+
+                    <RadioButton Style="{StaticResource TabButtonStyle}" HorizontalAlignment="Left" Content="我的" Checked="{s:Action OnUserProfileBtn_Checked}"
+                                 VerticalAlignment="Top" Margin="14,373,0,0" />
+                </Grid>
+
+            </Border>
+            <Border Grid.Column="1" CornerRadius="0 10 10 0" Background="#FFFFFF">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Border Background="#FFFFFF" CornerRadius="0 10 0 0">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="30" Color="#1E68BE" Direction="-90" Opacity="0.20"
+                                              ShadowDepth="2" />
+                        </Border.Effect>
+                        <Grid>
+                            <TextBlock Text="教学的艺术不在于传授本领,而在于激励、唤醒和鼓舞。   ——第斯多惠" Foreground="#CCCCCC"
+                                       HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,125,0" />
+                            <StackPanel Panel.ZIndex="10" Orientation="Horizontal" HorizontalAlignment="Right"
+                                        VerticalAlignment="Center"
+                                        Margin="0,0,8,0">
+
+                                <Separator Width="2" Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}"
+                                           Background="#E8E8E8" Margin="11" VerticalAlignment="Center" Height="29" />
+                                <Button Style="{StaticResource WCMinimizeBtnStyle}" Margin="11"
+                                        Command="{s:Action OnWCBtnMinimize}" VerticalAlignment="Center" />
+                                <Button Style="{StaticResource WCCloseBtnStyle}" Margin="11"
+                                        Command="{s:Action OnWCBtnClose}" VerticalAlignment="Center" />
+                            </StackPanel>
+                        </Grid>
+
+                    </Border>
+                    <Grid Grid.Row="1">
+                       
+
+                        <ContentControl  s:View.Model="{Binding CurrentViewModel}" />
+
+                    </Grid>
+                </Grid>
+            </Border>
+
+        </Grid>
+    </Border>
+</Window>

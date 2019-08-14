@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="学比邻老师客户端.UI.Controls.LoadingCircle"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
+             xmlns:local="clr-namespace:学比邻老师客户端.UI.Controls"
+             mc:Ignorable="d" x:Name="Self"
+             d:DesignHeight="100" d:DesignWidth="100">
+    <Grid>
+        <ed:Arc x:Name="Indicator" ArcThickness="{Binding ElementName=Self, Path=ArcThickness}" StrokeThickness="0"
+                Fill="#2388E7" StartAngle="0" EndAngle="0" Stretch="None" RenderTransformOrigin="0.5,0.5">
+            <ed:Arc.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1" ScaleX="1" />
+                    <SkewTransform AngleY="0" AngleX="0" />
+                    <RotateTransform Angle="-90" />
+                    <TranslateTransform />
+                </TransformGroup>
+            </ed:Arc.RenderTransform>
+
+            <ed:Arc.Style>
+                <Style TargetType="{x:Type ed:Arc}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=Self, Path=IsStarted}" Value="True">
+                            <DataTrigger.EnterActions>
+
+                                <BeginStoryboard>
+                                    <Storyboard RepeatBehavior="Forever" Duration="0:0:1.0">
+                                        <!--<DoubleAnimation  Storyboard.TargetProperty="EndAngle" 
+                                                 Duration="0:0:2" From="0" To="360"/>
+                                    <DoubleAnimation  Storyboard.TargetProperty="StartAngle" 
+                                                 Duration="0:0:2" From="0" To="360" BeginTime="0:0:2"/>-->
+
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="EndAngle">
+                                            <DoubleAnimationUsingKeyFrames.KeyFrames>
+                                                <EasingDoubleKeyFrame KeyTime="0:0:0" Value="10" />
+
+                                                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="120" />
+
+                                                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="360" />
+
+                                                <SplineDoubleKeyFrame KeyTime="0:0:1.0" Value="370" />
+                                            </DoubleAnimationUsingKeyFrames.KeyFrames>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="StartAngle">
+                                            <DoubleAnimationUsingKeyFrames.KeyFrames>
+                                                <SplineDoubleKeyFrame KeyTime="0:0:0" Value="0" />
+
+                                                <SplineDoubleKeyFrame KeyTime="0:0:0.7" Value="0" />
+                                                <EasingDoubleKeyFrame KeyTime="0:0:1.0" Value="370" />
+                                            </DoubleAnimationUsingKeyFrames.KeyFrames>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </DataTrigger.EnterActions>
+
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </ed:Arc.Style>
+
+        </ed:Arc>
+    </Grid>
+</UserControl>
