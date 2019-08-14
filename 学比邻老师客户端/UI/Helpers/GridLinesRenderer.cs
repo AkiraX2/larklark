@@ -9,6 +9,9 @@ using System.Windows.Media;
 
 namespace 学比邻老师客户端.UI.Helpers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class GridLinesRenderer : DependencyObject
     {
         public static readonly DependencyProperty StrokeWidthProperty = DependencyProperty.Register(
