@@ -35,22 +35,22 @@
                     <Border.Background>
                         <ImageBrush ImageSource="/学比邻老师客户端;component/Resources/Images/UserProfile/img_bg_full.png" />
                     </Border.Background>
-                    <!-- 个人信息 begin  -->
-                    <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="96,64,0,0">
-                        <StackPanel Orientation="Horizontal"  HorizontalAlignment="Left">
-                            <TextBlock Text="&#xe677;" Style="{StaticResource FIcon}" FontSize="50" Margin="0,0,10,0"></TextBlock>
+                   <!-- 显示-->
+                    <Grid Grid.Row="1" Grid.RowSpan="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="96,64,0,0">
+                        <StackPanel Orientation="Horizontal"  Margin="10" Grid.Row="3" HorizontalAlignment="Left">
+                            <TextBlock Text="&#xe677;" Style="{StaticResource FIcon}" FontSize="50" Margin="3" Foreground="Black"></TextBlock>
                             <TextBlock Text="用户名" Margin="0,0,10,0" FontSize="15"/>
-                            <TextBlock Text="扎干啥" FontSize="15"/>
+                            <TextBlock Text="1" FontSize="15"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal"  Margin="10" Grid.Row="3" HorizontalAlignment="Left">
-                            <TextBlock Text="&#xe677;" Style="{StaticResource FIcon}" FontSize="50" Margin="0,0,10,0"></TextBlock>
                             <TextBlock Text="手机号码" Margin="0,54,10,0" FontSize="15"/>
                             <TextBlock Text="1" FontSize="15"/>
                         </StackPanel>
                     </Grid>
-                    <!-- 个人信息 end -->
-
+                    <!-- 显示end-->
+                    <!--  <TextBlock Text="用户名" Margin="96 64 0 0" Width="64" HorizontalAlignment="Left" VerticalAlignment="Top">1</TextBlock>-->
                 </Border>
+                
                 <Border Grid.Column="1" Width="221" Height="505">
 
                     <Grid>
