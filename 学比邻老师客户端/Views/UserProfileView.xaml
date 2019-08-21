@@ -36,16 +36,36 @@
                         <ImageBrush ImageSource="/学比邻老师客户端;component/Resources/Images/UserProfile/img_bg_full.png" />
                     </Border.Background>
                     <!-- 个人信息 begin  -->
-                    <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="96,64,0,0">
-                        <StackPanel Orientation="Horizontal"  HorizontalAlignment="Left">
-                            <TextBlock Text="&#xe677;" Style="{StaticResource FIcon}" FontSize="50" Margin="0,0,10,0"></TextBlock>
-                            <TextBlock Text="用户名" Margin="0,0,10,0" FontSize="15"/>
-                            <TextBlock Text="扎干啥" FontSize="15"/>
+                    <Grid>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Top"  HorizontalAlignment="Left"  Margin="0,60,0,0">
+                            <Image Margin="52,-2,0,0" Height="25" Width="25" Source="/学比邻老师客户端;component/Resources/Images/UserProfile/icon_user.png"/>
+                            <TextBlock Text="用户名" Margin="20,0,14,0" FontSize="18" FontWeight="Bold" FontFamily="PingFang SC" Foreground="#333333"/>
+                            <TextBlock Text="扎干啥" FontSize="18" FontWeight="Bold" FontFamily="PingFang SC" Foreground="#666666" />
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal"  Margin="10" Grid.Row="3" HorizontalAlignment="Left">
-                            <TextBlock Text="&#xe677;" Style="{StaticResource FIcon}" FontSize="50" Margin="0,0,10,0"></TextBlock>
-                            <TextBlock Text="手机号码" Margin="0,54,10,0" FontSize="15"/>
-                            <TextBlock Text="1" FontSize="15"/>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Top"  HorizontalAlignment="Left"  Margin="0,130,0,0">
+                            <Image Margin="52,-2,0,0" Height="25" Width="25" Source="/学比邻老师客户端;component/Resources/Images/UserProfile/icon_phone.png"/>
+                            <TextBlock Text="手机号码" Margin="20,0,14,0" FontSize="18" FontWeight="Bold" FontFamily="PingFang SC" Foreground="#333333"/>
+                            <TextBlock Text="扎干啥" FontSize="18" FontWeight="Bold" FontFamily="PingFang SC" Foreground="#666666" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Top"  HorizontalAlignment="Left"  Margin="0,204,0,0">
+                            <Image Margin="52,-2,0,0" Height="25" Width="25" Source="/学比邻老师客户端;component/Resources/Images/UserProfile/icon_user.png"/>
+                            <TextBlock Text="最后登录时间" Margin="20,0,14,0" FontSize="18" FontWeight="Bold" FontFamily="PingFang SC" Foreground="#333333"/>
+                            <TextBlock Text="扎干啥" FontSize="18" FontWeight="Bold" FontFamily="PingFang SC" Foreground="#666666" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Top"  HorizontalAlignment="Left"  Margin="0,280,0,0">
+                            <Image Margin="52,-2,0,0" Height="25" Width="25" Source="/学比邻老师客户端;component/Resources/Images/UserProfile/icon_user.png"/>
+                            <TextBlock Text="邮箱地址" Margin="20,0,14,0" FontSize="18" FontWeight="Bold" FontFamily="PingFang SC" Foreground="#333333"/>
+                            <TextBlock Text="扎干啥" FontSize="18" FontWeight="Bold" FontFamily="PingFang SC" Foreground="#666666" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Top"  HorizontalAlignment="Left"  Margin="0,351,0,0">
+                            <Image Margin="52,-2,0,0" Height="25" Width="25" Source="/学比邻老师客户端;component/Resources/Images/UserProfile/icon_user.png"/>
+                            <TextBlock Text="微信" Margin="20,0,14,0" FontSize="18" FontWeight="Bold" FontFamily="PingFang SC" Foreground="#333333"/>
+                            <TextBlock Text="扎干啥" FontSize="18" FontWeight="Bold" FontFamily="PingFang SC" Foreground="#666666" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Top"  HorizontalAlignment="Left"  Margin="0,420,0,0">
+                            <Image Margin="52,-2,0,0" Height="25" Width="25" Source="/学比邻老师客户端;component/Resources/Images/UserProfile/icon_user.png"/>
+                            <TextBlock Text="个人信息" Margin="20,0,14,0" FontSize="18" FontWeight="Bold" FontFamily="PingFang SC" Foreground="#333333"/>
+                            <TextBlock Text="个人详细信息" FontSize="18" FontWeight="Bold" FontFamily="PingFang SC" Foreground="#666666" />
                         </StackPanel>
                     </Grid>
                     <!-- 个人信息 end -->
