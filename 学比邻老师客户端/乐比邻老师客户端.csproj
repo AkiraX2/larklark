@@ -234,11 +234,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Resource Include="Resources\Images\UserProfile\icon_personal.png" />
+    <Resource Include="Resources\Images\UserProfile\icon_user.png" />
     <Resource Include="Resources\Images\UserProfile\icon_email.png" />
     <Resource Include="Resources\Images\UserProfile\icon_phone.png" />
     <Resource Include="Resources\Images\UserProfile\icon_time.png" />
-    <Resource Include="Resources\Images\UserProfile\icon_user.png" />
-    <Resource Include="Resources\Images\UserProfile\icon_user_detail.png" />
     <Resource Include="Resources\Images\UserProfile\icon_weixin.png" />
     <Resource Include="Resources\font\PingFang.ttf" />
     <Resource Include="Resources\Images\ClassTable\btn_left arrow.png" />
