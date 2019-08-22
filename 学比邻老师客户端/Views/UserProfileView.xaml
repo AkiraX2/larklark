@@ -36,35 +36,35 @@
                         <ImageBrush ImageSource="/学比邻老师客户端;component/Resources/Images/UserProfile/img_bg_full.png" />
                     </Border.Background>
                     <!-- 个人信息 begin  -->
-                    <Grid>
+                    <Grid DataContext="{Binding UserProfile}">
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Top"  Margin="0,65,0,0">
-                            <Image Margin="52,0,0,0" Height="25" Width="24" Source="/学比邻老师客户端;component/Resources/Images/UserProfile/icon_user.png"/>
-                            <TextBlock Text="1" Margin="20,0,14,0" FontWeight="Bold" FontSize="18"  FontFamily="微软雅黑" Foreground="#333333"/>
-                            <TextBlock Text="1" FontSize="18"  FontFamily="微软雅黑" Foreground="#666666" />
+                            <Image Margin="52,0,0,0" Height="25" Width="25" Source="/学比邻老师客户端;component/Resources/Images/UserProfile/icon_user.png"/>
+                            <TextBlock Text="用户名" Margin="20,0,14,0" FontSize="18" Foreground="#333333"/>
+                            <TextBlock Text="{Binding Username}" FontSize="18" Foreground="#666666" />
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Top"  HorizontalAlignment="Left"  Margin="0,130,0,0">
-                            <Image Margin="52,-5,0,0" Height="30" Width="23" Source="/学比邻老师客户端;component/Resources/Images/UserProfile/icon_phone.png"/>
-                            <TextBlock Text="手机号码" Margin="20,0,14,0" FontSize="18" FontWeight="Bold" FontFamily="微软雅黑" Foreground="#333333"/>
-                            <TextBlock Text="13121111221" FontSize="18" Foreground="#666666" />
+                            <Image Margin="52,0,0,0" Height="25" Width="25" Source="/学比邻老师客户端;component/Resources/Images/UserProfile/icon_phone.png"/>
+                            <TextBlock Text="手机号码" Margin="20,0,14,0" FontSize="18" FontWeight="Normal"  Foreground="#333333"/>
+                            <TextBlock Text="13121111221" FontSize="18" FontWeight="Thin" Foreground="#666666" />
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Top"  HorizontalAlignment="Left"  Margin="0,195,0,0">
-                            <Image Margin="52,-2,0,0" Height="25" Width="25" Source="/学比邻老师客户端;component/Resources/Images/UserProfile/icon_time.png"/>
-                            <TextBlock Text="最后登录时间" Margin="20,0,14,0" FontSize="18" FontWeight="Bold" Foreground="#333333"/>
+                            <Image Margin="52,0,0,0" Height="25" Width="25" Source="/学比邻老师客户端;component/Resources/Images/UserProfile/icon_time.png"/>
+                            <TextBlock Text="最后登录时间" Margin="20,0,14,0" FontSize="18" FontWeight="Normal" Foreground="#333333"/>
                             <TextBlock Text="2019-06-01 12:12:12" FontSize="18" Foreground="#666666" />
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Top"  HorizontalAlignment="Left"  Margin="0,260,0,0">
-                            <Image Margin="52,-2,0,0" Height="17" Width="25" Source="/学比邻老师客户端;component/Resources/Images/UserProfile/icon_email.png"/>
-                            <TextBlock Text="邮箱地址" Margin="20,0,14,0" FontSize="18" FontWeight="Bold" Foreground="#333333"/>
+                            <Image Margin="52,0,0,0" Height="25" Width="25" Source="/学比邻老师客户端;component/Resources/Images/UserProfile/icon_email.png"/>
+                            <TextBlock Text="邮箱地址" Margin="20,0,14,0" FontSize="18" FontWeight="Normal" Foreground="#333333"/>
                             <TextBlock Text="tianke@163.com" FontSize="18" Foreground="#666666" />
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Top"  HorizontalAlignment="Left"  Margin="0,325,0,0">
-                            <Image Margin="52,-2,0,0"  Source="/学比邻老师客户端;component/Resources/Images/UserProfile/icon_weixin.png"/>
-                            <TextBlock Text="微信" Margin="20,0,14,0" FontSize="18" FontWeight="Bold" Foreground="#333333"/>
+                            <Image Margin="52,0,0,0" Height="25" Width="25"  Source="/学比邻老师客户端;component/Resources/Images/UserProfile/icon_weixin.png"/>
+                            <TextBlock Text="微信" Margin="20,0,14,0" FontSize="18" FontWeight="Normal" Foreground="#333333"/>
                             <TextBlock Text="绑定" FontSize="18" Foreground="#E92A2A" />
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Top"  HorizontalAlignment="Left"  Margin="0,390,0,0">
-                            <Image Margin="52,-2,0,0" Height="21" Width="25" Source="/学比邻老师客户端;component/Resources/Images/UserProfile/icon_personal.png"/>
-                            <TextBlock Text="个人信息" Margin="20,0,14,0" FontSize="18" FontWeight="Bold" Foreground="#333333"/>
+                            <Image Margin="52,0,0,0" Height="25" Width="25" Source="/学比邻老师客户端;component/Resources/Images/UserProfile/icon_personal.png"/>
+                            <TextBlock Text="个人信息" Margin="20,0,14,0" FontSize="18" FontWeight="Normal" Foreground="#333333"/>
                             <TextBlock   FontSize="18" Foreground="#666666" >
                                 <Hyperlink Name="hyperlink0" NavigateUri="http://www.qq.com">个人详细信息</Hyperlink>
                             </TextBlock>

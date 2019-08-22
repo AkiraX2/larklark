@@ -13,7 +13,7 @@
         xmlns:uic="clr-namespace:学比邻老师客户端.UI.Controls"
         xmlns:uicvt="clr-namespace:学比邻老师客户端.UI.Converters"
         xmlns:uid="clr-namespace:学比邻老师客户端.UI.Decorators"
-        Title="{Binding DisplayName}" Topmost="True" WindowStartupLocation="CenterScreen" Width="1320" Height="760"
+        Title="{Binding DisplayName}"   WindowStartupLocation="CenterScreen" Width="1320" Height="760"
         MinHeight="760" MinWidth="1320"
         Background="Transparent"
         ResizeMode="CanResizeWithGrip" WindowStyle="None" AllowsTransparency="True" BorderThickness="20">
@@ -22,7 +22,7 @@
     </Window.Effect>
     <i:Interaction.Behaviors>
         <uib:DragWindowBehavior />
-        <uib:TopmostWindowBehavior />
+        <!--<uib:TopmostWindowBehavior />-->
         <uib:CloseWindowBehavior />
     </i:Interaction.Behaviors>
     <Window.RenderTransform>
