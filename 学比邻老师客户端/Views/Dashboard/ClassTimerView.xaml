@@ -1,0 +1,12 @@
+﻿<UserControl x:Class="学比邻老师客户端.Views.Dashboard.ClassTimerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:学比邻老师客户端.Views.Dashboard"
+             mc:Ignorable="d" 
+             d:DesignHeight="121" d:DesignWidth="94">
+    <Border CornerRadius="8" Background="#FDFEFF">
+        <Image Margin="0,0,0,0" Height="53" Width="60" Source="/学比邻老师客户端;component/Resources/Images/ClassTable/time_count_down.png"/>
+    </Border>
+</UserControl>

@@ -41,10 +41,20 @@
         </Grid>
 
         <Grid Grid.Column="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="138" />
+                    <RowDefinition Height="132" />
+                    <RowDefinition Height="132" />
+                    <RowDefinition Height="132" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+            </Grid>
+            <Grid Grid.Row="0">
+                <ContentControl s:View.Model="{Binding ClassTimerViewModel}" Margin="0,29,0,0" ></ContentControl>
+            </Grid>
             <!--<TextBlock Text="{Binding DisplayName}" HorizontalAlignment="Center" VerticalAlignment="Center" />-->
-
         </Grid>
-
 
     </Grid>
 </UserControl>

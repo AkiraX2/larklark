@@ -23,7 +23,7 @@
                             <BeginStoryboard>
                                 <Storyboard>
                                     <DoubleAnimation  Storyboard.TargetProperty="Opacity" 
-                                                 Duration="0:0:0.2" From="0" To="1"/>
+                                                 Duration="0:0:1" From="0" To="1"/>
                                     <ObjectAnimationUsingKeyFrames  Storyboard.TargetProperty="Visibility">
                                         <ObjectAnimationUsingKeyFrames.KeyFrames>
                                             <DiscreteObjectKeyFrame KeyTime="0:0:0">
@@ -43,10 +43,10 @@
                             <BeginStoryboard>
                                 <Storyboard>
                                     <DoubleAnimation  Storyboard.TargetProperty="Opacity" 
-                                                      Duration="0:0:0.1" From="1" To="0"/>
+                                                      Duration="0:0:0" From="1" To="0"/>
                                     <ObjectAnimationUsingKeyFrames  Storyboard.TargetProperty="Visibility">
                                         <ObjectAnimationUsingKeyFrames.KeyFrames>
-                                            <DiscreteObjectKeyFrame KeyTime="0:0:0.1">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0">
                                                 <DiscreteObjectKeyFrame.Value>
                                                     <Visibility>Hidden</Visibility>
                                                 </DiscreteObjectKeyFrame.Value>

@@ -14,7 +14,7 @@
              xmlns:uicvt="clr-namespace:学比邻老师客户端.UI.Converters"
              xmlns:uid="clr-namespace:学比邻老师客户端.UI.Decorators">
     <Grid>
-        <uic:PageLoading Text="读取中"></uic:PageLoading>
+        <uic:PageLoading Text="loading..." IsLoading="{Binding IsLoading}" Panel.ZIndex="10" ></uic:PageLoading>
         <Border CornerRadius="18" Background="#FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="16" Color="#7CC0FF" Direction="-90" ShadowDepth="6" Opacity="0.28" />
@@ -61,13 +61,15 @@
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Top"  HorizontalAlignment="Left"  Margin="0,325,0,0">
                             <Image Margin="52,0,0,0" Height="25" Width="25"  Source="/学比邻老师客户端;component/Resources/Images/UserProfile/icon_weixin.png"/>
                             <TextBlock Text="微信" Margin="20,0,14,0" FontSize="18" FontWeight="Normal" Foreground="#333333"/>
-                            <TextBlock Text="绑定" FontSize="18" Foreground="#E92A2A" />
+                            <TextBlock FontSize="18" Foreground="#666666" >
+                                <Hyperlink Click="{s:Action OnLinkBindWechat}">绑定</Hyperlink>
+                            </TextBlock>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Top"  HorizontalAlignment="Left"  Margin="0,390,0,0">
                             <Image Margin="52,0,0,0" Height="25" Width="25" Source="/学比邻老师客户端;component/Resources/Images/UserProfile/icon_personal.png"/>
                             <TextBlock Text="个人信息" Margin="20,0,14,0" FontSize="18" FontWeight="Normal" Foreground="#333333"/>
-                            <TextBlock   FontSize="18" Foreground="#666666" >
-                                <Hyperlink Name="hyperlink0" NavigateUri="http://www.qq.com">个人详细信息</Hyperlink>
+                            <TextBlock FontSize="18" Foreground="#666666" >
+                                <Hyperlink Click="{s:Action OnLinkUserProfile}">个人详细信息</Hyperlink>
                             </TextBlock>
                         </StackPanel>
                     </Grid>

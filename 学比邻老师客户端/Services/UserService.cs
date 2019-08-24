@@ -19,7 +19,7 @@ namespace 学比邻老师客户端.Services
             {
                 return await Task.Run(() =>
                 {
-                    Thread.Sleep(2500);
+                    Thread.Sleep(0);
 
                     return (0, new UserProfile() {
                         Email = "tianke645@163.com",

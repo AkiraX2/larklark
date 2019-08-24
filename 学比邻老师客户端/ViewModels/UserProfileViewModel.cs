@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using 学比邻老师客户端.Services;
 using 学比邻老师客户端.ViewModels.@base;
 
@@ -13,6 +14,7 @@ namespace 学比邻老师客户端.ViewModels
     public class UserProfileViewModel : BaseViewModel
     {
         public new string DisplayName => "我的";
+        public bool IsLoading { get; set; } = false;
 
         [Inject] UserService UserService;
 
@@ -21,8 +23,10 @@ namespace 学比邻老师客户端.ViewModels
 
         private void DoLoad()
         {
+            IsLoading = true;
             UserService.GetUserProfile("token").ContinueWith(res =>
-           {
+            {
+               IsLoading = false;
                var (code, data) = res.Result;
 
                if (code == 0)
@@ -47,6 +51,15 @@ namespace 学比邻老师客户端.ViewModels
 
         }
 
+        public void OnLinkUserProfile()
+        {
+            System.Diagnostics.Process.Start("http://www.baidu.com");
+        }
+
+        public void OnLinkBindWechat()
+        {
+            System.Diagnostics.Process.Start("http://www.baidu.com");
+        }
     }
 
 
