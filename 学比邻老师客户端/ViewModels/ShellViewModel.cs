@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using Anotar.NLog;
@@ -58,6 +59,13 @@ namespace 学比邻老师客户端.ViewModels
             //this._WindowManager.ShowWindow(_LoginViewModel2);
         }
 
+        public bool IsLoading { get; set; } = false;
+
+        public void OnBtnLoading()
+        {
+            IsLoading = true;
+            Task.Delay(3000).ContinueWith((t) => { IsLoading = false; });
+        }
 
         public void Login(object sender, EventArgs e)
         {
