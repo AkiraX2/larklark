@@ -197,6 +197,9 @@
     <Compile Include="UI\Controls\LoadingCircle.xaml.cs">
       <DependentUpon>LoadingCircle.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\Controls\PageLoading.xaml.cs">
+      <DependentUpon>PageLoading.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\Converters\SingleLineTextConverter.cs" />
     <Compile Include="UI\Decorators\WatermarkPasswordBox.cs" />
     <Compile Include="UI\Helpers\GridLinesRenderer.cs" />
@@ -315,6 +318,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UI\Controls\LoadingCircle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Controls\PageLoading.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

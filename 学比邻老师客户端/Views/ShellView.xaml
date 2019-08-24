@@ -17,6 +17,7 @@
         <uib:DragWindowBehavior/>
     </i:Interaction.Behaviors>
     <Grid>
+<uic:PageLoading Text="loading..." IsLoading="{Binding IsLoading}" Panel.ZIndex="10" ></uic:PageLoading>
 
         <StackPanel>
             <WrapPanel Orientation="Horizontal" Margin="10">
@@ -131,6 +132,9 @@
                 <Button Content="课堂窗口" Command="{s:Action OnBtnClassroom}" Width="100" Height="30" Margin="20"
                         Style="{StaticResource NormalBtnStyle}" />
                 <Button Content="右下角弹窗" Command="{s:Action OnBtnRBCornerPopup}" Width="100" Height="30" Margin="20"
+                        Style="{StaticResource NormalBtnStyle}" />
+
+                <Button Content="页面加载" Command="{s:Action OnBtnLoading}" Width="100" Height="30" Margin="20"
                         Style="{StaticResource NormalBtnStyle}" />
             </StackPanel>
         </StackPanel>

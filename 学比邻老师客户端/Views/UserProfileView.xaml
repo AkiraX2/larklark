@@ -14,13 +14,14 @@
              xmlns:uicvt="clr-namespace:学比邻老师客户端.UI.Converters"
              xmlns:uid="clr-namespace:学比邻老师客户端.UI.Decorators">
     <Grid>
+        <uic:PageLoading Text="读取中"></uic:PageLoading>
         <Border CornerRadius="18" Background="#FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="16" Color="#7CC0FF" Direction="-90" ShadowDepth="6" Opacity="0.28" />
 
             </Border.Effect>
+            
             <Grid>
-
                 <!--<TextBlock Text="{Binding DisplayName}" HorizontalAlignment="Center" VerticalAlignment="Center" />-->
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="668" />
