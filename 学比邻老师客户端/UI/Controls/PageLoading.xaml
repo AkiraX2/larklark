@@ -23,7 +23,7 @@
                             <BeginStoryboard>
                                 <Storyboard>
                                     <DoubleAnimation  Storyboard.TargetProperty="Opacity" 
-                                                 Duration="0:0:0.3" From="0" To="1"/>
+                                                 Duration="0:0:0.2" From="0" To="1"/>
                                     <ObjectAnimationUsingKeyFrames  Storyboard.TargetProperty="Visibility">
                                         <ObjectAnimationUsingKeyFrames.KeyFrames>
                                             <DiscreteObjectKeyFrame KeyTime="0:0:0">
