@@ -9,6 +9,7 @@
         <ResourceDictionary Source="./WCButtons.xaml" />
         <ResourceDictionary Source="./TabButton.xaml" />
         <ResourceDictionary Source="./Buttons.xaml" />
+        <ResourceDictionary Source="./ClassRoomToolbarBtn.xaml" />
         <ResourceDictionary Source="./LoginTextbox.xaml" />
 
 
