@@ -7,7 +7,7 @@ using 学比邻老师客户端.ViewModels.@base;
 
 namespace 学比邻老师客户端.ViewModels.ClassRoom
 {
-    class ClassRoomToolbarViewModel : BaseViewModel
+    public class ClassRoomToolbarViewModel : BaseViewModel
     {
     }
 }

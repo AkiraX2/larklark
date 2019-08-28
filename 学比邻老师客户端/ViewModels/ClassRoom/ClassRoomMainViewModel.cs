@@ -12,8 +12,10 @@ namespace 学比邻老师客户端.ViewModels.ClassRoom
     {
         public override string DisplayName => "课堂";
 
-        [Inject] private ClassRoomHeaderViewModel ClassRoomHeaderViewModel { get; set; }
+        [Inject] public ClassRoomHeaderViewModel ClassRoomHeaderViewModel { get; set; }
 
-        [Inject] private ClassRoomToolbarViewModel ClassRoomToolbarViewModel { get; set; }
+        [Inject] public ClassRoomToolbarViewModel ClassRoomToolbarViewModel { get; set; }
+
+        [Inject] public ClassRoomVideoFrameViewModel ClassRoomVideoFrameViewModel { get; set; }
     }
 }

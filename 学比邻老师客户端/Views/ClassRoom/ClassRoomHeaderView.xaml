@@ -5,8 +5,23 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:学比邻老师客户端.Views.ClassRoom"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+             xmlns:s="https://github.com/canton7/Stylet"
+             d:DesignHeight="50" d:DesignWidth="1280">
+
+    <Border CornerRadius="0">
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0.5,0.5" EndPoint="1,1">
+                <GradientStop Color="#FF5099E3" Offset="1"/>
+                <GradientStop Color="#FF1470C5" />
+                <GradientStop Color="#FF2180D8" Offset="0.5"/>
+            </LinearGradientBrush>
+        </Border.Background>
+        <Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+            </Grid>
+        </Grid>
+    </Border>
 </UserControl>
