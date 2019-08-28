@@ -10,18 +10,20 @@
 
     <Border CornerRadius="0">
         <Border.Background>
-            <LinearGradientBrush StartPoint="0.5,0.5" EndPoint="1,1">
-                <GradientStop Color="#FF5099E3" Offset="1"/>
-                <GradientStop Color="#FF1470C5" />
-                <GradientStop Color="#FF2180D8" Offset="0.5"/>
+            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                <GradientStop Color="#066ec8" />
+                <GradientStop Color="#187edb" Offset="0.5"/>
+                <GradientStop Color="#4c97e6" Offset="1"/>
             </LinearGradientBrush>
         </Border.Background>
         <Grid>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-            </Grid>
+            
+                <!-- <Grid.ColumnDefinitions> -->
+                <!--     <ColumnDefinition /> -->
+                <!-- </Grid.ColumnDefinitions> -->
+
+                <TextBlock Text="测试" Foreground="#FFF" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0"></TextBlock>
+  
         </Grid>
     </Border>
 </UserControl>

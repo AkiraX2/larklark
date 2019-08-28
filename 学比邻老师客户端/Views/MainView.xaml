@@ -81,9 +81,9 @@
 
                                 <Separator Width="2" Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}"
                                            Background="#E8E8E8" Margin="11" VerticalAlignment="Center" Height="29" />
-                                <Button Style="{StaticResource WCMinimizeBtnStyle}" Margin="11"
+                                <Button Style="{StaticResource WCMinimizeBtnStyle}" Margin="11" Foreground="#bbbbbb"
                                         Command="{s:Action OnWCBtnMinimize}" VerticalAlignment="Center" />
-                                <Button Style="{StaticResource WCCloseBtnStyle}" Margin="11"
+                                <Button Style="{StaticResource WCCloseBtnStyle}" Margin="11" Foreground="#bbbbbb"
                                         Command="{s:Action OnWCBtnClose}" VerticalAlignment="Center" />
                             </StackPanel>
                         </Grid>

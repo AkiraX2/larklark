@@ -57,7 +57,7 @@
                                   Height="10" />-->
                             <Viewbox Width="15" Height="15" HorizontalAlignment="Center" VerticalAlignment="Center">
 
-                                <Path Fill="#bbbbbb" Stroke="Black" StrokeThickness="0" x:Name="fore"
+                                <Path Fill="{TemplateBinding Foreground}" Stroke="Black" StrokeThickness="0" x:Name="fore"
                                       RenderTransformOrigin="0.5 0.5"
                                       Data="M468.83 580.885l-334.15 0.013c-38.053-0.013-69.675-30.857-70.638-68.897-0.948-38.057 29.131-68.896 67.2-68.898l334.14 0.009 138.914 0.01 285.035-0.01c38.04 0.001 69.663 30.845 70.626 68.886 0.951 38.06-29.131 68.902-67.202 68.901l-285.02-0.005-138.904-0.01z">
                                     <Path.RenderTransform>
@@ -118,7 +118,7 @@
                             <Viewbox Width="15" Height="15" HorizontalAlignment="Center" VerticalAlignment="Center">
 
                                 
-                                <Path Fill="#bbbbbb" StrokeThickness="0" x:Name="fore" 
+                                <Path Fill="{TemplateBinding Foreground}" StrokeThickness="0" x:Name="fore" 
                                       RenderTransformOrigin="0.5 0.5"
                                       Data="M583.168 523.776L958.464 148.48c18.944-18.944 18.944-50.176 0-69.12l-2.048-2.048c-18.944-18.944-50.176-18.944-69.12 0L512 453.12 136.704 77.312c-18.944-18.944-50.176-18.944-69.12 0l-2.048 2.048c-19.456 18.944-19.456 50.176 0 69.12l375.296 375.296L65.536 899.072c-18.944 18.944-18.944 50.176 0 69.12l2.048 2.048c18.944 18.944 50.176 18.944 69.12 0L512 594.944 887.296 970.24c18.944 18.944 50.176 18.944 69.12 0l2.048-2.048c18.944-18.944 18.944-50.176 0-69.12L583.168 523.776z">
                                     <Path.RenderTransform>
