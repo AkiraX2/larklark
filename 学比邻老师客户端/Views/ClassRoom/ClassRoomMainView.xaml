@@ -1,0 +1,31 @@
+﻿<Window x:Class="学比邻老师客户端.Views.ClassRoom.ClassRoomMainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:学比邻老师客户端.Views"
+        mc:Ignorable="d"
+        xmlns:uib="clr-namespace:UI.Behaivors"
+        xmlns:uic="clr-namespace:学比邻老师客户端.UI.Controls"
+        xmlns:uicvt="clr-namespace:学比邻老师客户端.UI.Converters"
+        xmlns:uid="clr-namespace:学比邻老师客户端.UI.Decorators"
+        xmlns:s="https://github.com/canton7/Stylet"
+        Title="ClassRoomMain" Height="450" Width="800">
+    <Border Background="#1B1B1B" CornerRadius="0">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Background="#FFFFFF">
+                <ContentControl  s:View.Model="{Binding ClassRoomHeaderViewModel}" />
+            </Grid>
+            <Grid Grid.Row="1">
+            </Grid>
+            <Grid Grid.Row="2" Background="#FFFFFF">
+                <ContentControl  s:View.Model="{Binding ClassRoomToolbarViewModel}" />
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

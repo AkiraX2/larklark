@@ -11,6 +11,7 @@ using StyletIoC;
 using UI.Windows;
 using 学比邻老师客户端.UI.Controls;
 using 学比邻老师客户端.ViewModels.@base;
+using 学比邻老师客户端.ViewModels.ClassRoom;
 
 namespace 学比邻老师客户端.ViewModels
 {
@@ -24,7 +25,7 @@ namespace 学比邻老师客户端.ViewModels
 
         [Inject] MainViewModel _MainViewModel;
 
-
+        [Inject] ClassRoomMainViewModel _ClassRoomMainViewModel;
 
 
 
@@ -65,6 +66,10 @@ namespace 学比邻老师客户端.ViewModels
 
         public bool IsLoading { get; set; } = false;
 
+        public void OnBtnClassRoom()
+        {
+            this._WindowManager.ShowWindow(_ClassRoomMainViewModel);
+        }
         public void OnBtnLoading()
         {
             IsLoading = true;

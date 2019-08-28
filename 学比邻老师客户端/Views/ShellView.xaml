@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
         xmlns:uib="clr-namespace:UI.Behaivors"
         xmlns:uic="clr-namespace:学比邻老师客户端.UI.Controls"
@@ -14,110 +14,111 @@
         xmlns:s="https://github.com/canton7/Stylet"
         PreviewKeyDown="{s:Action OnKeyDown}">
     <i:Interaction.Behaviors>
-        <uib:DragWindowBehavior/>
+        <uib:DragWindowBehavior />
     </i:Interaction.Behaviors>
     <Grid>
-<uic:PageLoading Text="loading..." IsLoading="{Binding IsLoading}" Panel.ZIndex="10" ></uic:PageLoading>
+        <uic:PageLoading Text="loading..." IsLoading="{Binding IsLoading}" Panel.ZIndex="10" />
 
         <StackPanel>
             <WrapPanel Orientation="Horizontal" Margin="10">
-                <uic:AvatarUserControl Width="60" Height="60" AvatarBorderThickness="4"   >
-                    <uic:AvatarUserControl.Effect >
-                        <DropShadowEffect BlurRadius="4" Color="#7CC0FF" Direction="-90" ShadowDepth="2" Opacity="0.28"/>
+                <uic:AvatarUserControl Width="60" Height="60" AvatarBorderThickness="4">
+                    <uic:AvatarUserControl.Effect>
+                        <DropShadowEffect BlurRadius="4" Color="#7CC0FF" Direction="-90" ShadowDepth="2" Opacity="0.28" />
                     </uic:AvatarUserControl.Effect>
 
                 </uic:AvatarUserControl>
 
-                <uic:AvatarUserControl Width="90" Height="90"  AvatarBorderThickness="6"   >
-                    <uic:AvatarUserControl.Effect >
-                        <DropShadowEffect BlurRadius="4" Color="#7CC0FF" Direction="-90" ShadowDepth="2" Opacity="0.28"/>
+                <uic:AvatarUserControl Width="90" Height="90" AvatarBorderThickness="6">
+                    <uic:AvatarUserControl.Effect>
+                        <DropShadowEffect BlurRadius="4" Color="#7CC0FF" Direction="-90" ShadowDepth="2" Opacity="0.28" />
                     </uic:AvatarUserControl.Effect>
 
                 </uic:AvatarUserControl>
 
-                <uic:AvatarUserControl Width="170" Height="170" AvatarBorderThickness="10"   >
-                    <uic:AvatarUserControl.Effect >
-                        <DropShadowEffect BlurRadius="4" Color="#7CC0FF" Direction="-90" ShadowDepth="2" Opacity="0.28"/>
+                <uic:AvatarUserControl Width="170" Height="170" AvatarBorderThickness="10">
+                    <uic:AvatarUserControl.Effect>
+                        <DropShadowEffect BlurRadius="4" Color="#7CC0FF" Direction="-90" ShadowDepth="2" Opacity="0.28" />
                     </uic:AvatarUserControl.Effect>
 
                 </uic:AvatarUserControl>
 
-                <uic:AvatarUserControl Width="60" Height="60" AvatarImage="/学比邻老师客户端;component/Resources/Avatars/sample.jpg" AvatarBorderThickness="4"   >
-                    <uic:AvatarUserControl.Effect >
-                        <DropShadowEffect BlurRadius="4" Color="#7CC0FF" Direction="-90" ShadowDepth="2" Opacity="0.28"/>
+                <uic:AvatarUserControl Width="60" Height="60"
+                                       AvatarImage="/学比邻老师客户端;component/Resources/Avatars/sample.jpg"
+                                       AvatarBorderThickness="4">
+                    <uic:AvatarUserControl.Effect>
+                        <DropShadowEffect BlurRadius="4" Color="#7CC0FF" Direction="-90" ShadowDepth="2" Opacity="0.28" />
                     </uic:AvatarUserControl.Effect>
 
                 </uic:AvatarUserControl>
 
-                <uic:AvatarUserControl Width="90" Height="90" AvatarImage="/学比邻老师客户端;component/Resources/Avatars/sample.jpg" AvatarBorderThickness="6"   >
-                    <uic:AvatarUserControl.Effect >
-                        <DropShadowEffect BlurRadius="4" Color="#7CC0FF" Direction="-90" ShadowDepth="2" Opacity="0.28"/>
+                <uic:AvatarUserControl Width="90" Height="90"
+                                       AvatarImage="/学比邻老师客户端;component/Resources/Avatars/sample.jpg"
+                                       AvatarBorderThickness="6">
+                    <uic:AvatarUserControl.Effect>
+                        <DropShadowEffect BlurRadius="4" Color="#7CC0FF" Direction="-90" ShadowDepth="2" Opacity="0.28" />
                     </uic:AvatarUserControl.Effect>
 
                 </uic:AvatarUserControl>
 
-                <uic:AvatarUserControl Width="170" Height="170" AvatarImage="/学比邻老师客户端;component/Resources/Avatars/sample.jpg" AvatarBorderThickness="10"   >
-                    <uic:AvatarUserControl.Effect >
-                        <DropShadowEffect BlurRadius="4" Color="#7CC0FF" Direction="-90" ShadowDepth="2" Opacity="0.28"/>
+                <uic:AvatarUserControl Width="170" Height="170"
+                                       AvatarImage="/学比邻老师客户端;component/Resources/Avatars/sample.jpg"
+                                       AvatarBorderThickness="10">
+                    <uic:AvatarUserControl.Effect>
+                        <DropShadowEffect BlurRadius="4" Color="#7CC0FF" Direction="-90" ShadowDepth="2" Opacity="0.28" />
                     </uic:AvatarUserControl.Effect>
 
                 </uic:AvatarUserControl>
-                <uic:LoadingCircle Width="40" Height="40" Margin="10" BorderThickness="10" IsStarted="True" ></uic:LoadingCircle>
+                <uic:LoadingCircle Width="40" Height="40" Margin="10" BorderThickness="10" IsStarted="True" />
 
-                <TextBlock FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding DisplayName}"/>
+                <TextBlock FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"
+                           Text="{Binding DisplayName}" />
                 <xctk:WatermarkPasswordBox HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" />
 
                 <PasswordBox Width="198" HorizontalAlignment="Center" VerticalAlignment="Center" />
 
-                <uic:AnimatedButton Content="立即登录"   Style="{StaticResource AnimateBtnStyle}" Click="{s:Action Login}"
-                                      Width="120" Height="30" Margin="20" >
-
-                </uic:AnimatedButton>
-
-                
+                <uic:AnimatedButton Content="立即登录" Style="{StaticResource AnimateBtnStyle}" Click="{s:Action Login}"
+                                    Width="120" Height="30" Margin="20" />
 
 
-                <Viewbox  Width="10" Height="10" >
+                <Viewbox Width="10" Height="10">
 
-                    <Path Fill="#bbbbbb" Stroke="Black" StrokeThickness="0" 
-                          Data="M468.83 580.885l-334.15 0.013c-38.053-0.013-69.675-30.857-70.638-68.897-0.948-38.057 29.131-68.896 67.2-68.898l334.14 0.009 138.914 0.01 285.035-0.01c38.04 0.001 69.663 30.845 70.626 68.886 0.951 38.06-29.131 68.902-67.202 68.901l-285.02-0.005-138.904-0.01z"
-                          />
-                 </Viewbox>
+                    <Path Fill="#bbbbbb" Stroke="Black" StrokeThickness="0"
+                          Data="M468.83 580.885l-334.15 0.013c-38.053-0.013-69.675-30.857-70.638-68.897-0.948-38.057 29.131-68.896 67.2-68.898l334.14 0.009 138.914 0.01 285.035-0.01c38.04 0.001 69.663 30.845 70.626 68.886 0.951 38.06-29.131 68.902-67.202 68.901l-285.02-0.005-138.904-0.01z" />
+                </Viewbox>
 
             </WrapPanel>
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="10" >
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
                 <StackPanel Margin="10">
-                    <TextBlock Text="默认状态" HorizontalAlignment="Center" Margin="10"></TextBlock>
+                    <TextBlock Text="默认状态" HorizontalAlignment="Center" Margin="10" />
                     <Button Content="Normal" Command="{s:Action OnBtnLogin}" Width="100" Height="30"
                             Style="{StaticResource NormalBtnStyle}" />
                 </StackPanel>
 
                 <StackPanel Margin="10">
-                    <TextBlock Text="悬浮状态" HorizontalAlignment="Center" Margin="10"></TextBlock>
-                    <Button Content="Normal" Command="{s:Action OnBtnLogin}" Width="100" Height="30" 
-                            Style="{StaticResource NormalBtnStyle}" />
-                </StackPanel>
-
-                <StackPanel Margin="10">
-                    <TextBlock Text="点击状态" HorizontalAlignment="Center" Margin="10"></TextBlock>
+                    <TextBlock Text="悬浮状态" HorizontalAlignment="Center" Margin="10" />
                     <Button Content="Normal" Command="{s:Action OnBtnLogin}" Width="100" Height="30"
                             Style="{StaticResource NormalBtnStyle}" />
                 </StackPanel>
- 
 
                 <StackPanel Margin="10">
-                    <TextBlock Text="默认状态" HorizontalAlignment="Center" Margin="10"></TextBlock>
+                    <TextBlock Text="点击状态" HorizontalAlignment="Center" Margin="10" />
+                    <Button Content="Normal" Command="{s:Action OnBtnLogin}" Width="100" Height="30"
+                            Style="{StaticResource NormalBtnStyle}" />
+                </StackPanel>
+
+
+                <StackPanel Margin="10">
+                    <TextBlock Text="默认状态" HorizontalAlignment="Center" Margin="10" />
                     <Button Content="Default" Command="{s:Action OnBtnLogin}" Width="100" Height="30" IsDefault="True"
                             Style="{StaticResource NormalBtnStyle}" />
                 </StackPanel>
 
                 <StackPanel Margin="10">
-                    <TextBlock Text="悬浮状态" HorizontalAlignment="Center" Margin="10"></TextBlock>
+                    <TextBlock Text="悬浮状态" HorizontalAlignment="Center" Margin="10" />
                     <Button Content="Default" Command="{s:Action OnBtnLogin}" Width="100" Height="30" IsDefault="True"
                             Style="{StaticResource NormalBtnStyle}" />
                 </StackPanel>
-
 
 
             </StackPanel>
@@ -133,9 +134,23 @@
                         Style="{StaticResource NormalBtnStyle}" />
                 <Button Content="右下角弹窗" Command="{s:Action OnBtnRBCornerPopup}" Width="100" Height="30" Margin="20"
                         Style="{StaticResource NormalBtnStyle}" />
-
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="进入课堂" Command="{s:Action OnBtnClassRoom}" Width="100" Height="30" Margin="20"
+                        Style="{StaticResource NormalBtnStyle}" />
                 <Button Content="页面加载" Command="{s:Action OnBtnLoading}" Width="100" Height="30" Margin="20"
                         Style="{StaticResource NormalBtnStyle}" />
+
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox Style="{StaticResource RoomToolbarBtnStyle }" ToolTip="视频"
+                                 Content="M 518.982 58.1819 c 128 0 232.727 104.727 232.727 232.727 v 162.91 l -465.454 4.654 V 290.909 c 0 -128 104.727 -232.727 232.727 -232.727 m 0 -58.1819 C 358.4 0 228.072 130.327 228.072 290.91 v 225.745 L 809.892 512 V 290.91 C 809.89 130.326 679.564 0 518.98 0 Z M 774.982 377.018 h -512 c -83.7819 0 -151.273 67.4909 -151.273 151.273 v 344.436 C 111.71 956.509 179.2 1024 262.982 1024 h 512 c 83.7819 0 151.273 -67.4899 151.273 -151.273 V 528.29 c 0 -83.7819 -67.4909 -151.273 -151.273 -151.273 Z m -207.127 342.11 v 134.981 h -95.4189 V 719.126 c -32.581 -16.29 -55.8539 -51.2 -55.8539 -90.7629 c 0 -58.1819 46.545 -104.728 104.727 -104.728 s 104.727 46.546 104.727 104.728 c -2.327 39.563 -25.6 74.4719 -58.1809 90.7629 Z" />
+                    <CheckBox Style="{StaticResource RoomToolbarBtnStyle }" ToolTip="视频1"
+                                 Content="M 518.982 58.1819 c 128 0 232.727 104.727 232.727 232.727 v 162.91 l -465.454 4.654 V 290.909 c 0 -128 104.727 -232.727 232.727 -232.727 m 0 -58.1819 C 358.4 0 228.072 130.327 228.072 290.91 v 225.745 L 809.892 512 V 290.91 C 809.89 130.326 679.564 0 518.98 0 Z M 774.982 377.018 h -512 c -83.7819 0 -151.273 67.4909 -151.273 151.273 v 344.436 C 111.71 956.509 179.2 1024 262.982 1024 h 512 c 83.7819 0 151.273 -67.4899 151.273 -151.273 V 528.29 c 0 -83.7819 -67.4909 -151.273 -151.273 -151.273 Z m -207.127 342.11 v 134.981 h -95.4189 V 719.126 c -32.581 -16.29 -55.8539 -51.2 -55.8539 -90.7629 c 0 -58.1819 46.545 -104.728 104.727 -104.728 s 104.727 46.546 104.727 104.728 c -2.327 39.563 -25.6 74.4719 -58.1809 90.7629 Z" />
+                </StackPanel>
+
+                <CheckBox Style="{StaticResource RoomToolbarBtnStyle }" ToolTip="视频1"
+                             Content="M 518.982 58.1819 c 128 0 232.727 104.727 232.727 232.727 v 162.91 l -465.454 4.654 V 290.909 c 0 -128 104.727 -232.727 232.727 -232.727 m 0 -58.1819 C 358.4 0 228.072 130.327 228.072 290.91 v 225.745 L 809.892 512 V 290.91 C 809.89 130.326 679.564 0 518.98 0 Z M 774.982 377.018 h -512 c -83.7819 0 -151.273 67.4909 -151.273 151.273 v 344.436 C 111.71 956.509 179.2 1024 262.982 1024 h 512 c 83.7819 0 151.273 -67.4899 151.273 -151.273 V 528.29 c 0 -83.7819 -67.4909 -151.273 -151.273 -151.273 Z m -207.127 342.11 v 134.981 h -95.4189 V 719.126 c -32.581 -16.29 -55.8539 -51.2 -55.8539 -90.7629 c 0 -58.1819 46.545 -104.728 104.727 -104.728 s 104.727 46.546 104.727 104.728 c -2.327 39.563 -25.6 74.4719 -58.1809 90.7629 Z" />
+
             </StackPanel>
         </StackPanel>
     </Grid>
