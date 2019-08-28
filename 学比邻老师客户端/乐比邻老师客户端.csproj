@@ -194,7 +194,6 @@
     <Compile Include="UI\Controls\AvatarUserControl.xaml.cs">
       <DependentUpon>AvatarUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\Controls\ImageButton.cs" />
     <Compile Include="UI\Controls\LoadingCircle.xaml.cs">
       <DependentUpon>LoadingCircle.xaml</DependentUpon>
     </Compile>
@@ -204,6 +203,7 @@
     <Compile Include="ViewModels\ClassRoom\ClassRoomToolbarViewModel.cs" />
     <Compile Include="ViewModels\ClassRoom\ClassRoomHeaderViewModel.cs" />
     <Compile Include="ViewModels\ClassRoom\ClassRoomMainViewModel.cs" />
+    <Compile Include="ViewModels\ClassRoom\ClassRoomVideoFrameViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\ClassTimerViewModel.cs" />
     <Compile Include="UI\Converters\SingleLineTextConverter.cs" />
     <Compile Include="UI\Decorators\WatermarkPasswordBox.cs" />
@@ -291,7 +291,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Resources\Themes\Default\ImageButton.xaml">
+    <Page Include="Resources\Themes\Default\ClassRoomToolbarBtn.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -344,6 +344,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ClassRoom\ClassRoomToolbarView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ClassRoom\ClassRoomVideoFrameView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
