@@ -15,7 +15,7 @@
                                     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="{TemplateBinding Padding}">
                                         <Grid  Width="20"  Height="20" HorizontalAlignment="Center" VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
                                             <Viewbox>
-                                                <Path x:Name="Path" Fill="Red" Data="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=Content }"></Path>
+                                                <Path x:Name="Path" Fill="#999999" Data="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=Content }"></Path>
                                             </Viewbox>
                                         </Grid>
                                         <TextBlock x:Name="PART_Content" Text="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=ToolTip }" FontSize="10"  
