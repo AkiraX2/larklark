@@ -38,7 +38,7 @@ larklark
  - .NET Framework 4.7.2 开发工具
  - .NET Framework 4 – 4.6 开发工具
  - Blend for Visual Studio
- - NuGet 包管理器
+ - NuGet 包管理器1
  
 
 ### 项目依赖
