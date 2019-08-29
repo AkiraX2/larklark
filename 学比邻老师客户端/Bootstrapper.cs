@@ -15,7 +15,7 @@ using 学比邻老师客户端.ViewModels.@base;
 
 namespace 学比邻老师客户端
 {
-    public class Bootstrapper : Bootstrapper<ShellViewModel>
+    public class Bootstrapper : Bootstrapper<LoginViewModel>
     { 
 
 

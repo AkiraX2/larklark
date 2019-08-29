@@ -14,7 +14,6 @@
              xmlns:uicvt="clr-namespace:学比邻老师客户端.UI.Converters"
              xmlns:uid="clr-namespace:学比邻老师客户端.UI.Decorators">
     <Grid>
-        <uic:PageLoading Text="loading..." IsLoading="{Binding IsLoading}" Panel.ZIndex="10" ></uic:PageLoading>
         <Border CornerRadius="18" Background="#FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="16" Color="#7CC0FF" Direction="-90" ShadowDepth="6" Opacity="0.28" />
@@ -22,6 +21,7 @@
             </Border.Effect>
             
             <Grid>
+
                 <!--<TextBlock Text="{Binding DisplayName}" HorizontalAlignment="Center" VerticalAlignment="Center" />-->
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="668" />
@@ -38,6 +38,8 @@
                     </Border.Background>
                     <!-- 个人信息 begin  -->
                     <Grid DataContext="{Binding UserProfile}">
+                        <uic:PageLoading Text="loading..." IsLoading="{Binding IsLoading}" Panel.ZIndex="10" ></uic:PageLoading>
+
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Top"  Margin="0,65,0,0">
                             <Image Margin="52,0,0,0" Height="25" Width="25" Source="/学比邻老师客户端;component/Resources/Images/UserProfile/icon_user.png"/>
                             <TextBlock Text="用户名" Margin="20,0,14,0" FontSize="18" Foreground="#333333"/>

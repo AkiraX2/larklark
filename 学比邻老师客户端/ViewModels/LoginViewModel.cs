@@ -20,66 +20,128 @@ using 学比邻老师客户端.ViewModels.@base;
 
 namespace 学比邻老师客户端.ViewModels
 {
+    /// <summary>
+    /// 用户登录窗口的viewmodel类
+    /// </summary>
     public class LoginViewModel : BaseWindowVM
     {
-        public LoginViewModel()
-        {
-        }
-
+        #region 私有字段
+        /// <summary>
+        /// windowmanager接口对象
+        /// </summary>
         [Inject] private IWindowManager WindowManager { get; set; }
 
-        public override string DisplayName => "登录乐比邻";
-
+        /// <summary>
+        /// 密码输入框对象
+        /// </summary>
         private WatermarkPasswordBox WatermarkPasswordBox { get; set; }
 
+        /// <summary>
+        /// 密码框是否已输入
+        /// </summary>
         private bool HasPassword
         {
             get => WatermarkPasswordBox?.HasPassword ?? false;
         }
 
+        /// <summary>
+        /// 登录服务接口对象
+        /// </summary>
+        [Inject] private LoginService LoginService { get; set; }
+        #endregion
 
+        #region 公共属性
+        /// <summary>
+        /// 窗口标题
+        /// </summary>
+        public override string DisplayName => "登录乐比邻";
+
+        /// <summary>
+        /// 用户名
+        /// </summary>
         public string Username { get; set; }
 
+        /// <summary>
+        /// 是否正在登录
+        /// </summary>
+        public bool IsDoingLogin { get; set; } = false;
 
-        public void LoginForm_Changed(object sender, EventArgs e)
-        {
-            ErrorMessage = null;
-            NotifyOfPropertyChange(() => this.CanLogin);
-        }
-
-        public void PasswordBox_Loaded(object sender, EventArgs e)
-        {
-            WatermarkPasswordBox = sender as WatermarkPasswordBox;
-            if (WatermarkPasswordBox != null) WatermarkPasswordBox.PasswordBox.PasswordChanged += LoginForm_Changed;
-        }
-
-
+        /// <summary>
+        /// 是否可登录
+        /// </summary>
         public bool CanLogin
         {
             get => HasPassword && !string.IsNullOrWhiteSpace(Username);
         }
 
-        public bool IsDoingLogin { get; set; } = false;
+        /// <summary>
+        /// 错误信息
+        /// </summary>
+        public string ErrorMessage { get; set; }
+        #endregion
 
-        [Inject] private LoginService LoginService { get; set; }
+        #region 公共方法
+        /// <summary>
+        /// 构造方法
+        /// </summary>
+        public LoginViewModel()
+        {
+        }
 
+        /// <summary>
+        /// 密码输入框加载完成事件触发时
+        /// </summary>
+        /// <param name="sender">发起者</param>
+        /// <param name="e">事件参数</param>
+        public void PasswordBox_Loaded(object sender, EventArgs e)
+        {
+            WatermarkPasswordBox = sender as WatermarkPasswordBox;
+
+            // 订阅密码改变事件
+            if (WatermarkPasswordBox != null)
+            {
+                WatermarkPasswordBox.PasswordBox.PasswordChanged += LoginForm_Changed;
+            }
+        }
+
+        /// <summary>
+        /// 点击登录按钮时
+        /// </summary>
+        /// <param name="sender">发起者</param>
+        /// <param name="e">事件参数</param>
         public void OnBtnLogin_Click(object sender, EventArgs e)
         {
-            if (sender is AnimatedButton btnLogin)
+            if (sender is AnimatedButton)
             {
-                if (IsDoingLogin)
+                // 如果正在登录，返回
+                if (IsDoingLogin == true)
                 {
                     return;
                 }
+
+                // 重置相关参数
                 ErrorMessage = null;
-                IsDoingLogin = true; 
+                IsDoingLogin = true;
                 DoLogin();
             }
         }
 
-        public string ErrorMessage { get; set; }
+        /// <summary>
+        /// 账户文本框text改变时
+        /// </summary>
+        /// <param name="sender">发起者</param>
+        /// <param name="e">事件参数</param>
+        public void LoginForm_Changed(object sender, EventArgs e)
+        {
+            ErrorMessage = null;
+            NotifyOfPropertyChange(() => this.CanLogin);
+        }
+        #endregion
 
-
+        #region 内部方法
+        /// <summary>
+        /// 登录的具体步骤
+        /// </summary>
         private void DoLogin()
         {
             var password = WatermarkPasswordBox?.PasswordBox?.Password;
@@ -89,7 +151,6 @@ namespace 学比邻老师客户端.ViewModels
                 var (code, msg) = res.Result;
                 IsDoingLogin = false;
 
-
                 if (code == 0)
                 {
                     Execute.OnUIThread(() => { this.RequestClose(); });
@@ -98,47 +159,24 @@ namespace 学比邻老师客户端.ViewModels
                 {
                     Execute.OnUIThread(() =>
                     {
-                        this.ErrorMessage = $"{msg}({code})"; 
+                        this.ErrorMessage = $"{msg}({code})";
                     });
                 }
             });
         }
-    }
+        #endregion
 
-
-    public class LoginViewModelValidator : AbstractValidator<LoginViewModel>
-    {
-        public LoginViewModelValidator()
+        #region 内部类
+        /// <summary>
+        /// 本viewmodel的校验类
+        /// </summary>
+        public class LoginViewModelValidator : AbstractValidator<LoginViewModel>
         {
-            RuleFor(x => x.DisplayName).Equals("This is Sample.");
+            public LoginViewModelValidator()
+            {
+                RuleFor(x => x.DisplayName).Equals("This is Sample.");
+            }
         }
+        #endregion
     }
-}
-
-namespace 学比邻老师客户端.Views
-{
-    //public partial class LoginView : AbstractMixinWindow
-    //{
-    //    public override DoubleAnimation CloseAnimation { get; set; } = new DoubleAnimation
-    //    {
-    //        From = 1,
-    //        To = 0,
-    //        Duration = TimeSpan.FromSeconds(0.6),
-    //        EasingFunction = new BackEase() { EasingMode = EasingMode.EaseInOut }
-    //    };
-
-    //    public override event EventHandler CloseAnimationCompleted;
-
-    //    public override void Anim_Closing()
-    //    {
-    //        CloseAnimation.Completed += CloseAnimationCompleted;
-
-    //        mScaleTransform.BeginAnimation(ScaleTransform.ScaleXProperty, CloseAnimation.Clone());
-    //        mScaleTransform.BeginAnimation(ScaleTransform.ScaleYProperty, CloseAnimation.Clone());
-    //        Window.BeginAnimation(Window.OpacityProperty, CloseAnimation);
-
-
-    //    }
-
-    //}
 }
