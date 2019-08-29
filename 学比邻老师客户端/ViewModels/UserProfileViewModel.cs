@@ -69,6 +69,9 @@ namespace 学比邻老师客户端.ViewModels
         public string Username { get; set; }
 
         // 邮箱
+        public string Phone { get; set; }
+
+        // 邮箱
         public string Email { get; set; }
     }
 }

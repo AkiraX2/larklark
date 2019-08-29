@@ -23,8 +23,8 @@ namespace 学比邻老师客户端.Services
 
                     return (0, new UserProfile() {
                         Email = "tianke645@163.com",
-                        Username = "tianke"
-                        
+                        Username = "tianke",
+                        Phone = "13111111111"
                     });
                 });
             }
