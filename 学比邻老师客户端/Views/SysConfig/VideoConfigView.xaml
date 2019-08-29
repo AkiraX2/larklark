@@ -55,7 +55,7 @@
                         <ComboBox Style="{StaticResource ComboBoxStyle}" Width="210" Height="30" Margin="0,20"
                               VerticalAlignment="Center" HorizontalAlignment="Left" SelectedIndex="0">
                             <ComboBoxItem Content="高清"/>
-                            <ComboBoxItem Content="流畅"/>
+                            <ComboBoxItem Content="标清"/>
                         </ComboBox>
                     </StackPanel>
 
@@ -69,7 +69,7 @@
                         <ComboBox Style="{StaticResource ComboBoxStyle}" Width="210" Height="30"  Margin="0,20"
                               VerticalAlignment="Center" HorizontalAlignment="Left" SelectedIndex="0">
                             <ComboBoxItem Content="高清"/>
-                            <ComboBoxItem Content="流畅"/>
+                            <ComboBoxItem Content="标清"/>
                         </ComboBox>
                     </StackPanel>
                 </Grid>
