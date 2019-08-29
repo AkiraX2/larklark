@@ -22,6 +22,7 @@
     
     <Window.Resources>
         <uicvt:SingleLineTextConverter x:Key="SingleLineTextConverter" />
+        <uicvt:BoolToImgConverter x:Key="BoolToImgConverter" />
         <FontFamily x:Key="logoFont">Pack://application:,,,/学比邻老师客户端;component/Resources/font/#宋徽宗瘦金体</FontFamily>
     </Window.Resources>
     
@@ -88,6 +89,9 @@
                                     <TextBlock Text="输入密码" FontSize="12" Foreground="#C8C8C8" />
                                 </uid:WatermarkPasswordBox.Watermark>
                             </uid:WatermarkPasswordBox>
+                            <Button Style="{StaticResource IconBtnSytle}" Height="10" Width="20" Command="{s:Action OnBtnEye_Click}" 
+                                    VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,138,45,0"
+                                    Background="{Binding IsShowPswd,Converter={StaticResource BoolToImgConverter}}"/>
                             <!--<PasswordBox HorizontalAlignment="Center" VerticalAlignment="Top" Width="280" Height="40"
                                                        PasswordChanged="{s:Action LoginForm_Changed}" Loaded="{s:Action PasswordBox_Loaded}"
                                                        Margin="0,120,0,0" VerticalContentAlignment="Center" Foreground="#999"  > 

@@ -4,21 +4,15 @@
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
 
     <Style x:Key="NormalBtnStyle" TargetType="{x:Type Button}">
-
-
         <Style.Setters>
             <Setter Property="HorizontalAlignment" Value="Center" />
             <Setter Property="VerticalAlignment" Value="Bottom" />
             <Setter Property="Template">
-
-
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type ButtonBase}">
-                        <Border x:Name="border" BorderThickness="1" Background="#FFFFFF" SnapsToDevicePixels="True"
-                                CornerRadius="15">
+                        <Border x:Name="border" BorderThickness="1" Background="#FFFFFF" SnapsToDevicePixels="True" CornerRadius="15">
                             <Border.Effect>
-                                <DropShadowEffect BlurRadius="16" Color="#7CC0FF" Direction="-90" ShadowDepth="6"
-                                                  Opacity="0.28" />
+                                <DropShadowEffect BlurRadius="16" Color="#7CC0FF" Direction="-90" ShadowDepth="6" Opacity="0.28" />
                             </Border.Effect>
                             <TextBlock x:Name="text" Text="{TemplateBinding Content}" Focusable="False" FontSize="12"
                                        Foreground="#2976BE"
@@ -39,60 +33,38 @@
                             <Trigger Property="IsPressed" Value="True">
                                 <Setter Property="Effect" TargetName="border" Value="{x:Null}" />
                             </Trigger>
-
                             <Trigger Property="IsEnabled" Value="False">
                                 <Setter Property="Background" TargetName="border" Value="#FFFFFF" />
                                 <Setter Property="BorderBrush" TargetName="border" Value="#E8E8E8" />
                                 <Setter Property="Foreground" TargetName="text" Value="#CCCCCC" />
                                 <Setter Property="Effect" TargetName="border" Value="{x:Null}" />
-
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
-
                 </Setter.Value>
             </Setter>
-
         </Style.Setters>
-
     </Style>
-    <Style x:Key="AnimateBtnStyle" TargetType="{x:Type uic:AnimatedButton}" BasedOn="{StaticResource NormalBtnStyle}">
 
-
+    <Style x:Key="TranspBtnStyle" TargetType="{x:Type Button}">
         <Style.Setters>
-
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Bottom" />
             <Setter Property="Template">
-
-
                 <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type uic:AnimatedButton}">
-                        <Grid>
-                            <uic:LoadingCircle x:Name="loading" Width="30" Height="30" IsHitTestVisible="False"
-                                               Opacity="0"
-                                               ArcThickness="2" HorizontalAlignment="Center" VerticalAlignment="Center" />
-
-                            <Border x:Name="border" BorderThickness="1" Background="#FFFFFF" SnapsToDevicePixels="True"
-                                    CornerRadius="15">
-
-
-                                <TextBlock x:Name="text" Text="{TemplateBinding Content}" Focusable="False"
-                                           FontSize="12" Foreground="#2976BE"
-                                           HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                           Margin="{TemplateBinding Padding}"
-                                           SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-
-
-                                <Border.Effect>
-                                    <DropShadowEffect BlurRadius="16" Color="#7CC0FF" Direction="-90" ShadowDepth="6"
-                                                      Opacity="0.28" />
-                                </Border.Effect>
-                            </Border>
-
-                        </Grid>
-
+                    <ControlTemplate TargetType="{x:Type ButtonBase}">
+                        <Border x:Name="border" BorderThickness="2" BorderBrush="White" Background="{TemplateBinding Background}" SnapsToDevicePixels="True" CornerRadius="15">
+                            <Border.Effect>
+                                <DropShadowEffect BlurRadius="16" Color="#7CC0FF" Direction="-90" ShadowDepth="6" Opacity="0.28" />
+                            </Border.Effect>
+                            <TextBlock x:Name="text" Text="{TemplateBinding Content}" Focusable="False" FontSize="12"
+                                       Foreground="{TemplateBinding Foreground}"
+                                       HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                       Margin="{TemplateBinding Padding}"
+                                       SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                       VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </Border>
                         <ControlTemplate.Triggers>
-                           
                             <Trigger Property="IsMouseOver" Value="True">
                                 <Setter Property="Background" TargetName="border" Value="#4D94EE" />
                                 <Setter Property="Foreground" TargetName="text" Value="#FEFFFF" />
@@ -100,31 +72,60 @@
                             <Trigger Property="IsPressed" Value="True">
                                 <Setter Property="Effect" TargetName="border" Value="{x:Null}" />
                             </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
 
+    <Style x:Key="AnimateBtnStyle" TargetType="{x:Type uic:AnimatedButton}" BasedOn="{StaticResource NormalBtnStyle}">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type uic:AnimatedButton}">
+                        <Grid>
+                            <uic:LoadingCircle x:Name="loading" Width="30" Height="30" IsHitTestVisible="False"
+                                               Opacity="0"
+                                               ArcThickness="2" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <Border x:Name="border" BorderThickness="1" Background="#FFFFFF" SnapsToDevicePixels="True"
+                                    CornerRadius="15">
+                                <TextBlock x:Name="text" Text="{TemplateBinding Content}" Focusable="False"
+                                           FontSize="12" Foreground="#2976BE"
+                                           HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                           Margin="{TemplateBinding Padding}"
+                                           SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                <Border.Effect>
+                                    <DropShadowEffect BlurRadius="16" Color="#7CC0FF" Direction="-90" ShadowDepth="6" Opacity="0.28" />
+                                </Border.Effect>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" TargetName="border" Value="#4D94EE" />
+                                <Setter Property="Foreground" TargetName="text" Value="#FEFFFF" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Effect" TargetName="border" Value="{x:Null}" />
+                            </Trigger>
                             <Trigger Property="IsEnabled" Value="False">
                                 <Setter Property="Background" TargetName="border" Value="#FFFFFF" />
                                 <Setter Property="BorderBrush" TargetName="border" Value="#E8E8E8" />
                                 <Setter Property="Foreground" TargetName="text" Value="#CCCCCC" />
                                 <Setter Property="Effect" TargetName="border" Value="{x:Null}" />
-
                             </Trigger>
-
                             <!--<Trigger Property="Button.IsDefaulted" Value="True">
                                 <Setter Property="Background" TargetName="border" Value="#4D94EE" />
                                 <Setter Property="Foreground" TargetName="text" Value="#FEFFFF" />
                             </Trigger>-->
-
                             <!--<Trigger Property="IsLoading" Value="False">
-
                                 <Setter Property="Effect" TargetName="border" Value={x:Null}" />
                             </Trigger>-->
-
                             <Trigger Property="IsLoading" Value="True">
                                 <Setter Property="Background" TargetName="border" Value="#4D94EE" />
                                 <Setter Property="Foreground" TargetName="text" Value="#FEFFFF" />
-
                                 <Setter Property="Effect" TargetName="border" Value="{x:Null}" />
-
                                 <Trigger.EnterActions>
                                     <BeginStoryboard>
                                         <Storyboard>
@@ -143,9 +144,7 @@
                                                              Storyboard.TargetName="loading" BeginTime="0:0:0.28"
                                                              Duration="0:0:0.1" From="0"
                                                              To="1" />
-
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="loading"
-                                                                           Storyboard.TargetProperty="IsStarted">
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="loading" Storyboard.TargetProperty="IsStarted">
                                                 <ObjectAnimationUsingKeyFrames.KeyFrames>
                                                     <DiscreteObjectKeyFrame KeyTime="0:0:0.28">
                                                         <DiscreteObjectKeyFrame.Value>
@@ -154,7 +153,6 @@
                                                     </DiscreteObjectKeyFrame>
                                                 </ObjectAnimationUsingKeyFrames.KeyFrames>
                                             </ObjectAnimationUsingKeyFrames>
-
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </Trigger.EnterActions>
@@ -176,9 +174,7 @@
                                                              Storyboard.TargetName="loading" BeginTime="0:0:0.1"
                                                              Duration="0:0:0.1" From="1"
                                                              To="0" />
-
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="loading"
-                                                                           Storyboard.TargetProperty="IsStarted">
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="loading" Storyboard.TargetProperty="IsStarted">
                                                 <ObjectAnimationUsingKeyFrames.KeyFrames>
                                                     <DiscreteObjectKeyFrame KeyTime="0:0:0.1">
                                                         <DiscreteObjectKeyFrame.Value>
@@ -187,33 +183,25 @@
                                                     </DiscreteObjectKeyFrame>
                                                 </ObjectAnimationUsingKeyFrames.KeyFrames>
                                             </ObjectAnimationUsingKeyFrames>
-
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </Trigger.ExitActions>
-
                             </Trigger>
-
                             <!--<EventTrigger RoutedEvent="Click">
                                 <EventTrigger.Actions>
-                                    
                                 <BeginStoryboard>
                                     <Storyboard >
                                         <DoubleAnimation Storyboard.TargetProperty="Width" Storyboard.TargetName="border" Duration="0:0:3" From="{Binding Width, }"  To="30" />
                                         <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="text"  Duration="0:0:0.3" From="1"  To="0" />
                                     </Storyboard>
                                 </BeginStoryboard>
-
                                 </EventTrigger.Actions>
                             </EventTrigger>-->
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
-
                 </Setter.Value>
             </Setter>
-
         </Style.Setters>
-
     </Style>
 
 
@@ -225,7 +213,6 @@
                         <Border x:Name="border" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" BorderThickness="0" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
                         </Border>
                         <ControlTemplate.Triggers>
-
                             <Trigger Property="IsMouseOver" Value="True">
                                 <Setter Property="Opacity" TargetName="border" Value="0.8"/>
                             </Trigger>
@@ -238,6 +225,4 @@
             </Setter>
         </Style.Setters>
     </Style>
-
-
 </ResourceDictionary>

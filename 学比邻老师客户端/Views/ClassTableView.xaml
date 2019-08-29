@@ -15,14 +15,11 @@
              xmlns:uid="clr-namespace:学比邻老师客户端.UI.Decorators"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="260" />
         </Grid.ColumnDefinitions>
-
-        <Grid>
-
+        <Grid Grid.Row="0" Grid.Column="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="136" />
                 <RowDefinition Height="*" />
@@ -34,10 +31,9 @@
                     </Border>
                 </Border>
             </Grid>
-            <Grid Grid.Row="1">
+            <Grid Grid.Row="1" Grid.Column="0">
                 <ContentControl s:View.Model="{Binding TimeTableViewModel}" Margin="20,4,20,35" ></ContentControl>
             </Grid>
-
         </Grid>
 
         <Grid Grid.Column="1">
@@ -55,6 +51,5 @@
             </Grid>
             <!--<TextBlock Text="{Binding DisplayName}" HorizontalAlignment="Center" VerticalAlignment="Center" />-->
         </Grid>
-
     </Grid>
 </UserControl>
