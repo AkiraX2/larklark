@@ -16,20 +16,25 @@
     mc:Ignorable="d"
     Title="{Binding DisplayName}" Topmost="True" WindowStartupLocation="CenterScreen"
     WindowState="{Binding WindowState}"
-    Background="Transparent"
+    Background="Transparent" FocusManager.FocusedElement="{Binding ElementName=tbUserName}"
     ResizeMode="NoResize" WindowStyle="None" AllowsTransparency="True"
-    Width="800" Height="600">
+    Width="430" Height="330">
+    
     <Window.Resources>
         <uicvt:SingleLineTextConverter x:Key="SingleLineTextConverter" />
+        <FontFamily x:Key="logoFont">Pack://application:,,,/学比邻老师客户端;component/Resources/font/#宋徽宗瘦金体</FontFamily>
     </Window.Resources>
+    
     <Window.Effect>
         <DropShadowEffect BlurRadius="18" Color="#666666" Direction="0" ShadowDepth="0" Opacity=".22" />
     </Window.Effect>
+    
     <i:Interaction.Behaviors>
         <uib:DragWindowBehavior />
         <uib:TopmostWindowBehavior />
         <uib:CloseWindowBehavior />
     </i:Interaction.Behaviors>
+    
     <Window.RenderTransform>
         <TransformGroup>
             <ScaleTransform x:Name="MScaleTransform" />
@@ -38,44 +43,49 @@
             <TranslateTransform />
         </TransformGroup>
     </Window.RenderTransform>
-    <Border Height="330" Width="430" CornerRadius="10">
+    
+    <Border CornerRadius="10">
         <Border.Background>
             <ImageBrush ImageSource="/学比邻老师客户端;component/Resources/Images/Login/img_bg.png" />
         </Border.Background>
         <Grid>
-            <StackPanel Panel.ZIndex="10" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top"
-                        Margin="0,0,8,0">
+            <StackPanel Panel.ZIndex="10" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,8,0">
                 <Button Style="{StaticResource WCMinimizeBtnStyle}" Command="{s:Action OnWCBtnMinimize}" />
                 <Button Style="{StaticResource WCCloseBtnStyle}" Command="{s:Action OnWCBtnClose}" />
             </StackPanel>
             <Grid>
+                <Image Source="/学比邻老师客户端;component/Resources/Images/Login/img_logo.png" HorizontalAlignment="Left" 
+                       VerticalAlignment="Top" Width="35" Margin="20,10,0,0"/>
+                <TextBlock Text="学比邻老师端" FontFamily="{StaticResource logoFont}" Foreground="White" FontWeight="Bold" FontSize="12px" Margin="65,15,0,0"/>
+                <TextBlock Text="Learn to be next to your teacher" FontFamily="{StaticResource logoFont}" Foreground="White" FontWeight="Bold" FontSize="8px" Margin="53,28,0,0"/>
+                <Image Source="/学比邻老师客户端;component/Resources/Images/Login/img_xiaonvhai.png"
+                       HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="60" Margin="0,0,21,13" Panel.ZIndex="99"/>
+
+                <uic:AvatarUserControl Width="60" Height="60" AvatarBorderThickness="4" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,45,0,0" Panel.ZIndex="99">
+                    <uic:AvatarUserControl.Effect>
+                        <DropShadowEffect BlurRadius="4" Color="#7CC0FF" Direction="-90" ShadowDepth="2" Opacity="0.28" />
+                    </uic:AvatarUserControl.Effect>
+                </uic:AvatarUserControl>
                 <Border>
                     <Border Background="White" Width="350" Height="240" Margin="0,67,0,23" CornerRadius="20">
                         <Border.Effect>
-                            <DropShadowEffect BlurRadius="16" Color="#7CC0FF" Direction="-90" ShadowDepth="3"
-                                              Opacity="0.28" />
+                            <DropShadowEffect BlurRadius="16" Color="#7CC0FF" Direction="-90" ShadowDepth="3" Opacity="0.28" />
                         </Border.Effect>
                         <Grid>
-                            <TextBlock
-                                Text="{Binding ErrorMessage, Converter={StaticResource SingleLineTextConverter}}"
-                                Foreground="#FF5A5A" HorizontalAlignment="Center" VerticalAlignment="Top"
-                                Margin="0 46 0  0" />
-                            <xctk:WatermarkTextBox HorizontalAlignment="Center" VerticalAlignment="Top" Width="280"
-                                                   Height="40" Margin="0,66,0,0"
-                                                   Style="{StaticResource LoginTextBoxStyle}"
-                                                   TextChanged="{s:Action LoginForm_Changed}"
-                                                   Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"
+                            <TextBlock Text="{Binding ErrorMessage, Converter={StaticResource SingleLineTextConverter}}"
+                                Foreground="#FF5A5A" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,46,0,0" />
+                            <xctk:WatermarkTextBox x:Name="tbUserName" HorizontalAlignment="Center" VerticalAlignment="Top" Width="280"
+                                                   Height="40" Margin="0,66,0,0" Style="{StaticResource LoginTextBoxStyle}"
+                                                   TextChanged="{s:Action LoginForm_Changed}" Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"
                                                    VerticalContentAlignment="Center" Foreground="#999">
-
                                 <xctk:WatermarkTextBox.Watermark>
-                                    <TextBlock Text="输入ID或者用户名登录" FontSize="12" Foreground="#E8E8E8" />
+                                    <TextBlock Text="输入ID或者用户名登录" FontSize="12" Foreground="#C8C8C8" />
                                 </xctk:WatermarkTextBox.Watermark>
                             </xctk:WatermarkTextBox>
-                            <uid:WatermarkPasswordBox Loaded="{s:Action PasswordBox_Loaded}"
-                                                      HorizontalAlignment="Center" VerticalAlignment="Top"
+                            <uid:WatermarkPasswordBox Loaded="{s:Action PasswordBox_Loaded}" HorizontalAlignment="Center" VerticalAlignment="Top"
                                                       Width="280" Height="40" Margin="0,120,0,0">
                                 <uid:WatermarkPasswordBox.Watermark>
-                                    <TextBlock Text="输入密码" FontSize="12" Foreground="#E8E8E8" />
+                                    <TextBlock Text="输入密码" FontSize="12" Foreground="#C8C8C8" />
                                 </uid:WatermarkPasswordBox.Watermark>
                             </uid:WatermarkPasswordBox>
                             <!--<PasswordBox HorizontalAlignment="Center" VerticalAlignment="Top" Width="280" Height="40"
@@ -83,26 +93,11 @@
                                                        Margin="0,120,0,0" VerticalContentAlignment="Center" Foreground="#999"  > 
                                
                             </PasswordBox>-->
-                            <uic:AnimatedButton Content="立即登录" IsDefault="True" Click="{s:Action OnBtnLogin_Click}"
-                                                Style="{StaticResource AnimateBtnStyle}" IsEnabled="{Binding CanLogin}"
-                                                IsLoading="{Binding IsDoingLogin}"
-                                                Margin="0,24" Width="120" Height="30" />
+                            <uic:AnimatedButton Content="立即登录" IsDefault="True" Click="{s:Action OnBtnLogin_Click}" Style="{StaticResource AnimateBtnStyle}" IsEnabled="{Binding CanLogin}"
+                                                IsLoading="{Binding IsDoingLogin}" Margin="0,24" Width="120" Height="30" />
                         </Grid>
                     </Border>
                 </Border>
-            </Grid>
-
-            <Grid x:Name="fg">
-                <Image Source="/学比邻老师客户端;component/Resources/Images/Login/img_xiaonvhai.png"
-                       HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="60" Margin="0,0,21,13" />
-
-                <uic:AvatarUserControl Width="60" Height="60" AvatarBorderThickness="4" HorizontalAlignment="Center"
-                                       VerticalAlignment="Top" Margin="0,45,0,0">
-                    <uic:AvatarUserControl.Effect>
-                        <DropShadowEffect BlurRadius="4" Color="#7CC0FF" Direction="-90" ShadowDepth="2" Opacity="0.28" />
-                    </uic:AvatarUserControl.Effect>
-                </uic:AvatarUserControl>
-
             </Grid>
         </Grid>
     </Border>

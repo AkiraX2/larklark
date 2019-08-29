@@ -243,6 +243,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Resource Include="Resources\font\宋徽宗瘦金体.ttf" />
+    <Resource Include="Resources\Images\Login\img_logo.png" />
     <Resource Include="Resources\Images\ClassTable\time_count_down.png" />
     <Resource Include="Resources\Images\UserProfile\icon_personal.png" />
     <Resource Include="Resources\Images\UserProfile\icon_user.png" />
