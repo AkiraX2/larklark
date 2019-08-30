@@ -205,6 +205,7 @@
     <Compile Include="ViewModels\ClassRoom\ClassRoomHeaderViewModel.cs" />
     <Compile Include="ViewModels\ClassRoom\ClassRoomMainViewModel.cs" />
     <Compile Include="ViewModels\ClassRoom\ClassRoomVideoFrameViewModel.cs" />
+    <Compile Include="ViewModels\Dashboard\ReportBoxViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\ClassTimerViewModel.cs" />
     <Compile Include="UI\Converters\SingleLineTextConverter.cs" />
     <Compile Include="UI\Decorators\WatermarkPasswordBox.cs" />
@@ -222,6 +223,9 @@
     <Compile Include="ViewModels\UserProfileViewModel.cs" />
     <Compile Include="ViewModels\ClassTableViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="Views\Dashboard\ReportBox.xaml.cs">
+      <DependentUpon>ReportBox.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\CloneHelper.cs" />
@@ -370,6 +374,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Dashboard\ClassTimerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Dashboard\ReportBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

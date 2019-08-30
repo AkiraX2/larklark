@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="学比邻老师客户端.Views.Dashboard.ReportBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:学比邻老师客户端.Views.Dashboard"
+             mc:Ignorable="d" 
+             d:DesignHeight="87" d:DesignWidth="215">
+    <Grid>
+        <Border>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="57" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Border Background="#459BEC" CornerRadius="8 8 0 0">
+                        <Grid>
+                            <TextBlock Text="上课安排" Foreground="#FFF" FontWeight="Bold" FontSize="14"
+                               HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Grid>
+                    </Border>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="28" />
+                            <RowDefinition Height="28" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="70" />
+                            <ColumnDefinition  Width="70"/>
+                            <ColumnDefinition  Width="70"/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </Grid>
+            </Grid>
+            
+        </Border>  
+    </Grid>
+</UserControl>

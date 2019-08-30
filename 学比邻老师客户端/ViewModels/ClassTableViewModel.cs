@@ -17,5 +17,7 @@ namespace 学比邻老师客户端.ViewModels
         [Inject] public TimeTableViewModel TimeTableViewModel { get; set; }
 
         [Inject] public ClassTimerViewModel ClassTimerViewModel { get; set; }
+
+        [Inject] public ReportBoxViewModel ReportBoxViewModel { get; set; }
     }
 }

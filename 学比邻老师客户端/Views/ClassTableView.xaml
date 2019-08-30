@@ -49,6 +49,9 @@
             <Grid Grid.Row="0">
                 <ContentControl s:View.Model="{Binding ClassTimerViewModel}" Margin="0,29,0,0" ></ContentControl>
             </Grid>
+            <Grid Grid.Row="1">
+                <ContentControl s:View.Model="{Binding ReportBoxViewModel}" Margin="0,29,0,0" ></ContentControl>
+            </Grid>
             <!--<TextBlock Text="{Binding DisplayName}" HorizontalAlignment="Center" VerticalAlignment="Center" />-->
         </Grid>
     </Grid>
