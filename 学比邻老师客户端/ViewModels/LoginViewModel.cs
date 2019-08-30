@@ -75,6 +75,11 @@ namespace 学比邻老师客户端.ViewModels
         }
 
         /// <summary>
+        /// 是否显示密码明文
+        /// </summary>
+        public bool IsShowPswd { get; set; } = false;
+
+        /// <summary>
         /// 错误信息
         /// </summary>
         public string ErrorMessage { get; set; }
@@ -124,6 +129,14 @@ namespace 学比邻老师客户端.ViewModels
                 IsDoingLogin = true;
                 DoLogin();
             }
+        }
+
+        /// <summary>
+        /// 点击密码输入框后的眼睛按钮时
+        /// </summary>
+        public void OnBtnEye_Click()
+        {
+            IsShowPswd = !IsShowPswd;
         }
 
         /// <summary>

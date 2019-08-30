@@ -200,6 +200,7 @@
     <Compile Include="UI\Controls\PageLoading.xaml.cs">
       <DependentUpon>PageLoading.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\Converters\BoolToImgConverter.cs" />
     <Compile Include="ViewModels\ClassRoom\ClassRoomToolbarViewModel.cs" />
     <Compile Include="ViewModels\ClassRoom\ClassRoomHeaderViewModel.cs" />
     <Compile Include="ViewModels\ClassRoom\ClassRoomMainViewModel.cs" />
@@ -213,6 +214,10 @@
     <Compile Include="ViewModels\base\BaseWindowVM.cs" />
     <Compile Include="ViewModels\base\BaseViewModel.cs" />
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="ViewModels\SysConfigViewModel.cs" />
+    <Compile Include="ViewModels\SysConfig\BaseConfigViewModel.cs" />
+    <Compile Include="ViewModels\SysConfig\VideoConfigViewModel.cs" />
+    <Compile Include="ViewModels\SysConfig\VoiceConfigViewModel.cs" />
     <Compile Include="ViewModels\TimeTableViewModel.cs" />
     <Compile Include="ViewModels\UserProfileViewModel.cs" />
     <Compile Include="ViewModels\ClassTableViewModel.cs" />
@@ -243,6 +248,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Resource Include="Resources\Images\SysConfig\img_config.png" />
+    <Resource Include="Resources\Images\Login\img_open.png" />
+    <Resource Include="Resources\Images\Login\img_close.png" />
     <Resource Include="Resources\font\宋徽宗瘦金体.ttf" />
     <Resource Include="Resources\Images\Login\img_logo.png" />
     <Resource Include="Resources\Images\ClassTable\time_count_down.png" />
@@ -294,6 +302,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Resources\Themes\Default\ClassRoomToolbarBtn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Themes\Default\CombBoxBtn.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -358,6 +370,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Dashboard\ClassTimerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SysConfigView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SysConfig\BaseConfigView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SysConfig\VideoConfigView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SysConfig\VoiceConfigView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

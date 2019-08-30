@@ -6,6 +6,7 @@
         <ResourceDictionary.MergedDictionaries>
 
         <ResourceDictionary Source="./ToolbarBtn.xaml" />
+        <ResourceDictionary Source="./CombBoxBtn.xaml" />
         <ResourceDictionary Source="./WCButtons.xaml" />
         <ResourceDictionary Source="./TabButton.xaml" />
         <ResourceDictionary Source="./Buttons.xaml" />

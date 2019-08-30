@@ -15,13 +15,8 @@ using 学比邻老师客户端.ViewModels.@base;
 
 namespace 学比邻老师客户端
 {
-    public class Bootstrapper : Bootstrapper<LoginViewModel>
+    public class Bootstrapper : Bootstrapper<SysConfigViewModel>
     { 
-
-
-
-
-
         protected override void ConfigureIoC(IStyletIoCBuilder builder)
         {
             // Configure the IoC container in here
